@@ -1,0 +1,32 @@
+<style>
+    div{
+        text-align:center;
+    }
+    div > *{
+        margin:1rem;
+    }
+    input{
+        width:90%; 
+        height:5vh;
+    }
+    button, input{
+        font-size:2em;
+    }
+</style>
+
+<div>
+    <input/><br/>
+    <button onclick="go()">
+        Go
+    </button>
+</div>
+
+<script>
+    var input = document.querySelector('input');
+    function go(){
+        const url = new URL(input.value)
+        const queryParams = url.searchParams;
+        location.assign(`https://studio.youtube.com/video/${queryParams.get('v')}/livestreaming`)
+    }
+
+</script>
